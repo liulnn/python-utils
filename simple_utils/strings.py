@@ -12,12 +12,14 @@ except ImportError:
     import json
 
 json_dumps = functools.partial(json.dumps, ensure_ascii=False)
-md5 = lambda x: hashlib.md5(x.encode('raw_unicode_escape')).hexdigest()
-
 unique_uuid = lambda: uuid.uuid4().hex
 
 
-def randoms(length, letters=True, digits=True, filters=['O', 'o', '0']):
+def md5_hex_digest(x):
+    return hashlib.md5(x.encode('raw_unicode_escape')).hexdigest()
+
+
+def random_sample(length, letters=True, digits=True, filters=['O', 'o', '0']):
     if letters and not digits:
         raw_string = string.letters
     elif not letters and digits:

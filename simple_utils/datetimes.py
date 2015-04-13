@@ -29,7 +29,7 @@ def timestamp_to_datetime(timestamp, TIME_ZONE):
     return datetimee
 
 
-def clock(now_time=None):
+def clock_serie(now_time=None):
     if not now_time:
         now_time = time.gmtime()
     return '%s%02d%02d' % (
