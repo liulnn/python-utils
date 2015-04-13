@@ -1,6 +1,7 @@
 # encoding:utf-8
 import functools
 import hashlib
+import random
 import string
 import uuid
 
@@ -16,7 +17,7 @@ md5 = lambda x: hashlib.md5(x.encode('raw_unicode_escape')).hexdigest()
 unique_uuid = lambda: uuid.uuid4().hex
 
 
-def random(length, letters=True, digits=True, filters=['O', 'o', '0']):
+def randoms(length, letters=True, digits=True, filters=['O', 'o', '0']):
     if letters and not digits:
         raw_string = string.letters
     elif not letters and digits:
