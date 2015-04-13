@@ -8,7 +8,7 @@ if util_dir is not sys.path:
 
 
 import unittest
-from utils.binary import writeBool, readBool
+from simple_utils.binary import writeBool, readBool
 
 
 class BinaryTest(unittest.TestCase):
